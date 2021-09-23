@@ -14,6 +14,13 @@ Bark beetle infestation causes tree mortality in the national park which acts as
 
 Using LiDAR UAV data collected during excursion, this project aims to integrated information from high-resolution optical imagery and LiDAR data to improve detection performance of dead tree that possibly caused by bark beetle infestation within the research study plot.
 
+**Assumptions:**
+
+1) NDVI is insufficient to estimate dead trees as there are there are multiple reasons for low NDVI values (eg. no vegetation)
+2) LiDAR data alone is ineffective to inspect dead trees as dead trees have similar 3D structure before collapsing and phases such as yellowing of leaves is invisiable from point clouds
+3) Dead tree patches would give signal in NDVI that it can be first detected before looking into the point clouds
+4) Combining both data can aid dead tree detection
+
 **Research Questions:**
 
 1) What are the health status of the trees within study plot and what are the count of dead tree?
