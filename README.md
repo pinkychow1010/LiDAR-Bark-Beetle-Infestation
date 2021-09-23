@@ -63,4 +63,4 @@ It is possible that dead trees are misclassified from the NDVI due to insufficie
 1) Dead trees are not detected in the study plot although it is quite clear that they exist in the plot. It is possibly because of the  insufficient resolution of Planet data or other uncertainties of the estimated NDVI.
 2) It is possible to combine spectral and structural information for detecting dead trees using open source R packages.
 3) Yet, the resolution of spectral data is critical for the assessment as it limits the size of dead tree patches that would be potentially detected for further investigation using LiDAR.
-4) LAI-height might be used to esitmate tree health instead of NDVI when spectral data is unavailable.
+4) LAI/height might be used to esitmate tree health instead of NDVI when spectral data is unavailable.
