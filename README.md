@@ -34,18 +34,30 @@ R packages -
 
 In order to combine structural and spectral information, NDVI is calculated from the Planet imagery used for first inspection with resolution of 3 meters. The pixels with low NDVI values are further inspected by overlaying the pixel boundary with the UAV data so information such as LAI, height, and tree count can be retrieved. The end product would be statistical information about dead tree counts as well as their conditions.
 
+LiDAR point cloud post-processing:
+•Import laz file to R
+•Classify Ground Points
+•Calculate DTM
+•Height Normalization
+•Calculate DSM and CHM (Canopy Height Model)
+•Detect Tree Tops
+
 ![alt text](https://github.com/pinkychow1010/LiDAR_barkBeetleInfestation/blob/main/graphics/workflow.JPG "Fig. Workflow of this project")
 
 **Results:**
 
 1) Dead tree pixels are not detected from the Planet data as the pixel of minimum NDVI is above 0.7. Inspection then is focused on the pixels with relative lower NDVI for retrieving structural information from LiDAR. Significant differences of LAI are found between average NDVI and low NDVI group. For high NDVI values, LAI saturates and have no noticeable differences.
-2) NDVI is found not significantly correlated to NDVI, but highly correlated to tree heights
-3) Tree count is 170, with average 30 m height and LAI value of 2.
+2) LAI highly correlated to tree heights and health of trees can be distinguished by the ratio of LAI to height.
+3) LAI is saturated for high NDVI and thus show no significant correlation.
+4) Tree count is 170, with average 30 m height and LAI value of 2.
 
 **Limitations:**
 
 It is possible that dead trees are misclassified from the NDVI due to insufficient spatial resolution of Planet imagery (3m^2 could include several individual trees).
 
-**Conclusions:**
+**Key Messages/ Conclusions:**
 
-It is possible to combine spectral and structural information for detecting dead trees but the resolution of spectral might be critical for the assessment as it limits the size of dead tree patches that would be potentially detected.
+1) Dead trees are not detected in the study plot although it is quite clear that they exist in the plot. It is possibly because of the  insufficient resolution of Planet data or other uncertainties of the estimated NDVI.
+2) It is possible to combine spectral and structural information for detecting dead trees using open source R packages.
+3) Yet, the resolution of spectral data is critical for the assessment as it limits the size of dead tree patches that would be potentially detected for further investigation using LiDAR.
+4) LAI-height might be used to esitmate tree health instead of NDVI when spectral data is unavailable.
