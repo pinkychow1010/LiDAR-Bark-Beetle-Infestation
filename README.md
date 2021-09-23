@@ -40,11 +40,7 @@ In order to combine structural and spectral information, NDVI is calculated from
 
 1) Dead tree pixels are not detected from the Planet data as the pixel of minimum NDVI is above 0.7. Inspection then is focused on the pixels with relative lower NDVI for retrieving structural information from LiDAR. Significant differences of LAI are found between average NDVI and low NDVI group. For high NDVI values, LAI saturates and have no noticeable differences.
 2) NDVI is found not significantly correlated to NDVI, but highly correlated to tree heights
-3) Tree count is 170, with average 30 m height and LAI value of 3.
-
-![alt text](https://github.com/pinkychow1010/LiDAR_barkBeetleInfestation/blob/main/graphics/corr.png "Fig. NDVI and LAI of the study plot")
-
-![alt text](https://github.com/pinkychow1010/LiDAR_barkBeetleInfestation/blob/main/graphics/ind_by_health.png "Fig. LAI for different health groups")
+3) Tree count is 170, with average 30 m height and LAI value of 2.
 
 **Limitations:**
 
