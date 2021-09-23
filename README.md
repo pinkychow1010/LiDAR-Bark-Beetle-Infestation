@@ -34,13 +34,9 @@ R packages -
 
 In order to combine structural and spectral information, NDVI is calculated from the Planet imagery used for first inspection with resolution of 3 meters. The pixels with low NDVI values are further inspected by overlaying the pixel boundary with the UAV data so information such as LAI, height, and tree count can be retrieved. The end product would be statistical information about dead tree counts as well as their conditions.
 
-LiDAR point cloud post-processing:
-•Import laz file to R
-•Classify Ground Points
-•Calculate DTM
-•Height Normalization
-•Calculate DSM and CHM (Canopy Height Model)
-•Detect Tree Tops
+**LiDAR point cloud post-processing:**
+
+Import laz file to R ➤ Classify Ground Points ➤ Calculate DTM ➤ Height Normalization ➤ Calculate DSM and CHM (Canopy Height Model) ➤ Detect Tree Tops
 
 ![alt text](https://github.com/pinkychow1010/LiDAR_barkBeetleInfestation/blob/main/graphics/workflow.JPG "Fig. Workflow of this project")
 
