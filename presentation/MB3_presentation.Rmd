@@ -1,0 +1,116 @@
+---
+output: 
+  revealjs::revealjs_presentation:
+    theme: black
+    highlight: pygments
+    transition: default
+    self_contained: false
+    center: true
+    mathjax: NULL
+---
+
+<style>
+#background {
+  color: white;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.emphasized {
+  font-size: 1.1em;
+}
+</style>
+
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## {data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+<h1 style="color: #fff">Tree Health Assessment in Berchtesgaden National Park</h1>
+
+<br>
+
+<h3 style="color: #fff">MB3 – From Field Measurements to Geoinformation</h3>
+
+<h4 style="color: #fff">
+- Cornelia Zygar
+- Ka Hei Chow
+<br>
+`r format(Sys.time(), '%d %B %Y')`
+</h4>
+
+## Study Site & Background {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- Natural occurrence of bark beetle infestation
+- Monitoring dead trees using field and optical data
+- Application of UAV LiDAR to obtain quantitative dead tree information
+
+![](https://www.alpenjoy.de/wp-content/uploads/2012/06/Berchtesgadener-Land-Karte.gif){width=60%}
+
+
+## Research Questions {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- Can we assess the count/ height of unhealthy trees using LiDAR data?
+- What are the health statues of the trees in the study plot?
+
+## Data {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+<div class="container">
+
+<div class="col">
+![](https://static.tildacdn.com/tild3662-6262-4265-b435-356538616530/image.png)
+</div>
+
+<div class="col">
+![](https://i2.wp.com/eagle-science.org/wp-content/uploads/2021/07/jlknmanhlcblmoag.png?resize=400%2C250)
+</div>
+
+## Methods {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- NDVI (Vegetation Index)
+- LAI (Leaf Area Index)
+- Statistical Information derived from LiDAR Point Cloud
+
+## LiDAR Point Cloud Processing {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- Import laz file to R
+- Classify Ground Points
+- Calculate DTM
+- Height Normalization
+- Calculate DSM and CHM (Canopy Height Model)
+- Detect Tree Tops
+
+## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+![](workflow.JPG)
+
+## Results: Tree Health  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- Significant LAI differences between More and Less healthy trees
+- Less Healthy Tree Count: 40/170 (Lower 10% quantile)
+
+![](ind_by_health_dark.PNG)
+
+## Results: Parameters' Correlation  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- No correlation between for LAI and NDVI for high NDVI values 
+(corr = 0.122)
+
+![](ggcorr.png)
+
+
+## Results: LAI of individual trees  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+
+
+
