@@ -2,11 +2,13 @@
 output: 
   revealjs::revealjs_presentation:
     theme: black
+    logo: "logo.png"
     highlight: pygments
     transition: default
     self_contained: false
     center: true
     mathjax: NULL
+    fig_caption: true
 ---
 
 <style>
@@ -19,6 +21,7 @@ output:
   font-size: 1.1em;
 }
 </style>
+
 
 <style>
 .container{
@@ -42,75 +45,160 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <h3 style="color: #fff">MB3 – From Field Measurements to Geoinformation</h3>
 
-<h4 style="color: #fff">
-- Cornelia Zygar
-- Ka Hei Chow
+<h8 style="color: #ACACAC">
+Cornelia Zygar<br>
+Ka Hei Chow
 <br>
 `r format(Sys.time(), '%d %B %Y')`
-</h4>
+</h8>
 
 ## Study Site & Background {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
 - Natural occurrence of bark beetle infestation
-- Monitoring dead trees using field and optical data
-- Application of UAV LiDAR to obtain quantitative dead tree information
+- Inside Nationalpark: Natural process 
+- Outside Nationalpark: Danger for commercial forests
 
-![](https://www.alpenjoy.de/wp-content/uploads/2012/06/Berchtesgadener-Land-Karte.gif){width=60%}
+<div class="container">
 
+<div class="col">
+<!-- ![](https://www.alpenjoy.de/wp-content/uploads/2012/06/Berchtesgadener-Land-Karte.gif) -->
+![<font size="4">Bavaria and Berchtesgadener Land </font>](overview01.png)
+</div>
+
+<div class="col">
+
+![<font size="4">Berchtesgadener Land and AOI</font>](overview02.png)
+</div>
+
+<div class="col">
+
+![<font size="4">AOI </font>](overview03.png)
+</div>
+
+
+
+## Objective {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+Combination of LiDAR data and optical remote sensing data to improve detection and characteristics assessment of dead trees.
 
 ## Research Questions {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
-- Can we assess the count/ height of unhealthy trees using LiDAR data?
-- What are the health statues of the trees in the study plot?
+- Can we assess the number and height of unhealthy trees using LiDAR data in combination with optical data?
+- What are the health states of the trees in the study plot?
 
 ## Data {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
 <div class="container">
 
 <div class="col">
-![](https://static.tildacdn.com/tild3662-6262-4265-b435-356538616530/image.png)
+![<font size="4">https://static.tildacdn.com/</font>](https://static.tildacdn.com/tild3662-6262-4265-b435-356538616530/image.png)
 </div>
 
 <div class="col">
-![](https://i2.wp.com/eagle-science.org/wp-content/uploads/2021/07/jlknmanhlcblmoag.png?resize=400%2C250)
+
+![<font size="4">LiDAR point cloud (own image)</font>](pointcloud2.JPG)
 </div>
 
-## Methods {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+<!-- ## Methods {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"} -->
 
-- NDVI (Vegetation Index)
-- LAI (Leaf Area Index)
-- Statistical Information derived from LiDAR Point Cloud
+<!-- - NDVI -->
+<!-- - LAI (Leaf Area Index) -->
+<!-- - Tree tops and tree height derived from LiDAR Point Cloud -->
 
-## LiDAR Point Cloud Processing {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" data-transition="default-in none-out"}
 
-- Import laz file to R
-- Classify Ground Points
-- Calculate DTM
-- Height Normalization
-- Calculate DSM and CHM (Canopy Height Model)
-- Detect Tree Tops
+![](workflow01.png)
+
+## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" data-transition="none"}
+
+![](workflow02.png)
+
+## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" data-transition="none"}
+
+![](workflow03.png)
+
+## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" data-transition="none"}
+
+![](workflow04.png)
+
+## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" data-transition="none-in default-out"}
+
+![](workflow05.png)
+
 
 ## Workflow {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
-![](workflow.JPG)
+![](TtopDetection.png){width=30%}
+
+
+## Derived Data: NDVI {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+![<font size="4">10th quantile NDVI values</font>](unhealthy_ndvi.JPG){width=60%}
+
+## Derived Data: CHM & tree tops {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+![<font size="4">CHM with tree tops</font>](ttops.JPG){width=60%}
+
+## Derived Data: (un)healthy tree tops {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+<div class="container">
+
+<div class="col">
+![<font size="4">unhealthy tree tops</font>](unhealthy_ttops.JPG)
+</div>
+
+<div class="col">
+
+![<font size="4">healthy tree tops</font>](healthy_ttops.JPG)
+</div>
+
+
+
+## Derived Data: LAI {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+![<font size="4">LAI estimation</font>](lai.JPG){width=60%}
 
 ## Results: Tree Health  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
-- Significant LAI differences between More and Less healthy trees
-- Less Healthy Tree Count: 40/170 (Lower 10% quantile)
+<!-- - Significant LAI differences between More and Less healthy trees -->
+- Less Healthy Tree Count: 20/172 (Lower 10% quantile)
 
-![](ind_by_health_dark.PNG)
+![<font size="4">LAI and NDVI for (un)healthy trees </font>](ind_by_health_dark.PNG)
 
 ## Results: Parameters' Correlation  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
-- No correlation between for LAI and NDVI for high NDVI values 
-(corr = 0.122)
+<!-- - No correlation between for LAI and NDVI for high NDVI values  -->
 
-![](ggcorr.png)
+![<font size="4">LAI vs. NDVI (corr = 0.122)</font>](ggcorr.png)
+
+<!-- ## Results: LAI of individual trees  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"} -->
+
+<!-- ![](lai_plot.JPG){width=60%} -->
+
+## Results: LAI vs. Tree Height  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+![<font size="4">LAI vs. Height</font>](lai_height_plot.png){width=60%}
+
+## Results: Tree Height  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+<!-- - No correlation between tree height and health status of the trees -->
+
+![<font size="4">Tree Height of (un)healthy trees</font>](TreeHeight.png)
 
 
-## Results: LAI of individual trees  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+## Conclusion  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+- no detection of dead trees
+- combination of spectral and structural information is possible
+- resolution of spectral data is crucial variable
 
 
 
+## Limitations & Further Work  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
 
+- spatial resolution of NDVI/planet image
+- missing ground truth data (LAI, health status)
+
+## Thank you for your attention  {#standard .emphasized data-background="https://images.unsplash.com/photo-1573339607881-208e75e4b267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"}
+
+GitHub Repository: </br>
+https://github.com/pinkychow1010/LiDAR_barkBeetleInfestation
